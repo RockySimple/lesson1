@@ -1,17 +1,24 @@
 <html>
 <body>
-<h1><?php echo 'Zdarova'; ?></h1>
-<?php include('indeks.php'); ?>
-<?php print_r($_GET);
-echo '<br/>';
+
+<?php
+
 //echo ($_GET['a'] + $_GET['b']);
+ include 'form.html';
+print_r($_POST);
+
+echo '<table>';
+$count = 1;
+
+for($i = 0; $i < $_POST['rows']; $i++){
+    echo '<tr>';
+        for($j = 0; $j < $_POST['columns'];$j++){
+            echo '<td>'.$count.'</td>';
+            $count++;
+        }
+    echo '</tr>';
+}
+echo '</table>';
 ?>
-<?php include 'form.html';?>
-
-<?php include  'hello.html';
-echo '<br/>';?>
-
-
-
 </body>
 </html>
